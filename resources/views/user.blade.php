@@ -13,6 +13,6 @@
     <p> {{$users['name']}}</p>
     <p> {{$users['email']}}</p>
     <p> {{$users['phone']}}</p>
-    
+ 
 </body>
 </html>

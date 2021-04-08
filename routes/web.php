@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\LoginController;
+use App\Http\Middleware\CheckUser;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +38,6 @@ Route::get('/delete-post/{id}', [ClientController::class, 'deletePost'])->name('
 
 Route::get('/fluent-string', [FluentController::class, 'index'])->name('fluent.index');
 
-Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::get('/login', [LoginController::class, 'index'])->name('login.index')->middleware('checkuser');
 
 Route::post('login', [LoginController::class, 'loginSubmit'])->name('login.submit');

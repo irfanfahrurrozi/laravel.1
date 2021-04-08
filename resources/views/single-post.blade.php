@@ -27,23 +27,19 @@
                         </div>
 
                         <div class="card-body">
-                            @if(Session::has('post_created'))
-                                <div class="alert alert-success" role="alert">
-                                    {{Session::get('post_created')}}
-                                </div>
-                            @endif
-                            <form method="POST" action="{{route('posts.addsubmit')}}">
-                                @csrf
+                            Post Details
+                            <form >
+                                
                                 <div class="form-group">
                                     <label for="title">Post Title </label>
-                                    <input type="text" name ="title" class="form-control" placeholder="Enter Post Title">
+                                    <input type="text" name ="title" value="{{$posts->title}}" class="form-control" placeholder="Enter Post Title">
+
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="post">Post Destription</label>
-                                    <textarea class="form-control" name="post" rows="3"></textarea><br>
-                                    <input type="submit" class="btn btn-success" value="Submit">
-                                    <a href="/posts" class="btn btn-success btn-block ">Back </a>
+                                    <label for="posts">Post Destription</label>
+                                    <textarea class="form-control" name="post"  rows="3">{{$posts->post}}</textarea>
+                                    
                                 </div>
                                 
                             </form>

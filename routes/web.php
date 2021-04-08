@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SessionController;
 use App\Http\Middleware\CheckUser;
 use Illuminate\Support\Facades\Route;
 
@@ -41,3 +42,10 @@ Route::get('/fluent-string', [FluentController::class, 'index'])->name('fluent.i
 Route::get('/login', [LoginController::class, 'index'])->name('login.index')->middleware('checkuser');
 
 Route::post('login', [LoginController::class, 'loginSubmit'])->name('login.submit');
+
+Route::get('/session/get', [SessionController::class, 'getSessionData'])->name('session.data');
+
+Route::get('/session/set', [SessionController:: class, 'storeSessionData'])->name('session.store');
+
+Route::get('/session/remove', [SessionController::class, 'deleteSessionData'])->name('session.delete');
+

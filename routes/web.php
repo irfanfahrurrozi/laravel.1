@@ -28,15 +28,15 @@ Route::get ('/home/{name?}',[HomeController::class,'index'])->name('home.index')
 
 Route::get('/user', [UserController::class,'index'])->name('user.index');
 
-Route::get('/posts',[ClientController::class, 'getAllPost'])->name('posts.getAllPost');
+Route::get('/posts1',[ClientController::class, 'getAllPost'])->name('posts.getAllPost');
 
-Route::get('/posts/{id}', [ClientController::class, 'getPostById'])->name('posts.getPostById');
+Route::get('/posts1/{id}', [ClientController::class, 'getPostById'])->name('posts.getPostById');
 
-Route::get('/add-post', [ClientController::class, 'addPost'])->name('posts.addpost');
+Route::get('/add-post1', [ClientController::class, 'addPost'])->name('posts.addpost');
 
-Route::get('/update-post', [ClientController::class, 'updatePost'])->name('posts.update');
+Route::get('/update-post1', [ClientController::class, 'updatePost'])->name('posts.update');
 
-Route::get('/delete-post/{id}', [ClientController::class, 'deletePost'])->name('posts.delete');
+Route::get('/delete-post1/{id}', [ClientController::class, 'deletePost'])->name('posts.delete');
 
 Route::get('/fluent-string', [FluentController::class, 'index'])->name('fluent.index');
 
@@ -50,4 +50,8 @@ Route::get('/session/set', [SessionController:: class, 'storeSessionData'])->nam
 
 Route::get('/session/remove', [SessionController::class, 'deleteSessionData'])->name('session.delete');
 
-Route::get('/posts1', [PostController::class, 'getAllPost'])->name('posts.getallpost');
+Route::get('/posts', [PostController::class, 'getAllPost'])->name('posts.getallpost');
+
+Route::get('/add-post', [PostController::class, 'addPost'])->name('posts.add');
+
+Route::post('/add-post', [PostController::class, 'addPostSubmit'])->name('posts.addsubmit');

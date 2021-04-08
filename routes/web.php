@@ -7,6 +7,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\PostController;
 use App\Http\Middleware\CheckUser;
 use Illuminate\Support\Facades\Route;
 
@@ -49,3 +50,4 @@ Route::get('/session/set', [SessionController:: class, 'storeSessionData'])->nam
 
 Route::get('/session/remove', [SessionController::class, 'deleteSessionData'])->name('session.delete');
 
+Route::get('/posts1', [PostController::class, 'getAllPost'])->name('posts.getallpost');

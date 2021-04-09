@@ -23,7 +23,7 @@
                 <div class="col-md-6 offset-md-3">
                     <div class="card">
                         <div class="card-header">
-                            Add New Post 
+                            Edit Post
                         </div>
 
                         <div class="card-body">

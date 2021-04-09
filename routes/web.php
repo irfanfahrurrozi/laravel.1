@@ -62,4 +62,4 @@ Route::get('/delete-post/{id}', [PostController::class, 'deletePostById'])->name
 
 Route::get('/edit-post/{id}', [PostController::class, 'editPostById']) -> name('post.edit');
 
-Route::get('/update-post', [PostController::class, 'updatePostById'])-> name('posts.update');
+Route::post('/update-post', [PostController::class, 'updatePostById'])-> name('posts.update');

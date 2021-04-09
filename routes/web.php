@@ -8,6 +8,7 @@ use App\Http\Controllers\FluentController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PaginationController;
 use App\Http\Middleware\CheckUser;
 use Illuminate\Support\Facades\Route;
 
@@ -87,3 +88,5 @@ Route::get('/about', function(){
 Route::get('/contact', function(){
     return view('contact');
 });
+
+Route::get('/users', [PaginationController::class, 'allUsers']);

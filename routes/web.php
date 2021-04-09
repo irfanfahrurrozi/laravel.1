@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProductController::class,'index'])->name('product.index');
 
-Route::get ('/home/{name?}',[HomeController::class,'index'])->name('home.index');
+//Route::get ('/home/{name?}',[HomeController::class,'index'])->name('home.index');
 
 Route::get('/user', [UserController::class,'index'])->name('user.index');
 
@@ -74,4 +74,16 @@ Route::get('/all-posts', [PostController::class, 'getAllPostsUsingModel'])->name
 
 Route::get('test', function(){
     return view('test');
+});
+
+Route::get('/home', function(){
+    return view('index');
+});
+
+Route::get('/about', function(){
+    return view('about');
+});
+
+Route::get('/contact', function(){
+    return view('contact');
 });

@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ProductController::class,'index'])->name('product.index');
+//Route::get('/', [ProductController::class,'index'])->name('product.index');
 
 //Route::get ('/home/{name?}',[HomeController::class,'index'])->name('home.index');
 
@@ -78,7 +78,7 @@ Route::get('test', function(){
     return view('test');
 });
 
-Route::get('/home', function(){
+Route::get('/', function(){
     return view('index');
 });
 

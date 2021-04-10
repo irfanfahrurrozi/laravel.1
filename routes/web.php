@@ -8,6 +8,7 @@ use App\Http\Controllers\FluentController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\PaginationController;
 use App\Http\Middleware\CheckUser;
 use Illuminate\Support\Facades\Route;
@@ -90,3 +91,7 @@ Route::get('/contact', function(){
 });
 
 Route::get('/users', [PaginationController::class, 'allUsers']);
+
+Route::get('/upload', [UploadController::class, 'uploadForm']);
+
+Route::post('/upload', [UploadController::class, 'uploadFile'])->name('upload.uploadfile');
